@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>React Basics 1.25</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+    <script type="text/babel">
+        class BirthYear extends React.Component {
+            render() {
+                return <li>I was born in the year {this.props.value}.</li>;  
+            }
+        }
+
+
+        function DataList() {
+         return (
+            <React.Fragment>
+            <p>Some arbitrary data about me:</p>
+            <ul>
+            <BirthYear value={1842} />
+            </ul>
+            </React.Fragment>
+            )
+        }
+
+        ReactDOM.render(<DataList />, document.getElementById('root'));
+
+    </script>
+
+</body>
+</html>
